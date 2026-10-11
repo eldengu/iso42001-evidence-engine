@@ -116,7 +116,7 @@ This engine answers that with a **local-only evaluator** and a
 Requires Python 3.11 or newer.
 
 ```bash
-git clone https://github.com/eldensari/iso42001-evidence-engine.git
+git clone https://github.com/eldengu/iso42001-evidence-engine.git
 cd iso42001-evidence-engine
 
 python -m venv .venv

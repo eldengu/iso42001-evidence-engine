@@ -40,7 +40,7 @@ dev = ["pytest>=7.4.0"]
 iso42001-evidence = "iso42001_evidence_engine.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/eldensari/iso42001-evidence-engine"
+Homepage = "https://github.com/eldengu/iso42001-evidence-engine"
 
 # The source tree lives in ./src (flat, per project layout) but is installed
 # under the importable package name `iso42001_evidence_engine`. All intra-package

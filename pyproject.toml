@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iso42001-evidence-engine"
+version = "0.1.0"
+description = "Zero-Trust ISO/IEC 42001 compliance engine emitting HMAC-signed audit proofs for Claude Dashboard artifacts."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "AI Safety & Security Engineering" }]
+keywords = [
+  "iso42001", "ai-safety", "nist-ai-rmf", "anthropic-rsp", "zero-trust",
+  "compliance", "grc", "audit", "hmac",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+  "Topic :: Security :: Cryptography",
+  "Typing :: Typed",
+]
+dependencies = [
+  "pydantic>=2.5.0",
+  "cryptography>=41.0.0",
+  "typer>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4.0"]
+
+[project.scripts]
+iso42001-evidence = "iso42001_evidence_engine.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/eldensari/iso42001-evidence-engine"
+
+# The source tree lives in ./src (flat, per project layout) but is installed
+# under the importable package name `iso42001_evidence_engine`. All intra-package
+# imports are relative, so the modules work both as `src.*` (repo checkout,
+# pytest) and as `iso42001_evidence_engine.*` (installed wheel / CLI).
+[tool.setuptools]
+package-dir = { "iso42001_evidence_engine" = "src" }
+packages = ["iso42001_evidence_engine"]
+include-package-data = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers"
+filterwarnings = ["error::DeprecationWarning:src.*"]

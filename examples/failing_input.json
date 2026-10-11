@@ -1,0 +1,8 @@
+{
+  "system_id": "shadow-llm-prototype",
+  "asl_target": "ASL-3",
+  "dataset_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "pii_scan_score": 0.62,
+  "event_logging_enabled": false,
+  "runtime_guardrail_active": false
+}
